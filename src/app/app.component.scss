@@ -1,0 +1,11 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  a {
+    display: block;
+    margin-right: 20px;
+    color: #0076ad;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}

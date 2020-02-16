@@ -1,0 +1,35 @@
+<h2>Task 4</h2>
+
+<p>
+  Write script that displays a list of products from server response data.
+</p>
+
+<p>
+  Request URL: http://54.39.188.42/ Request method: GET Server returns encoded
+  JSON string in base64
+</p>
+
+<ul class="items">
+  <li class="item" *ngFor="let item of items">
+    <div>
+      <div class="item__top">
+        <span>#{{ item.id }}</span>
+        <span>{{ item.title }}</span>
+        <span>{{ item.sku }}</span>
+      </div>
+
+      <img [src]="item.image" alt="image" />
+      <ul class="item__options">
+        <span class="options-title">Product options:</span>
+        <li class="option" *ngFor="let option of item.options[0] | keyvalue">
+          <span>{{ strFormat(option.key) }}:</span>
+          <span>{{ option.value }}</span>
+        </li>
+      </ul>
+      <div class="item__price">
+        <span>{{ item.price | number: "1.0-2" }}</span>
+        <span>{{ item.currency }}</span>
+      </div>
+    </div>
+  </li>
+</ul>
